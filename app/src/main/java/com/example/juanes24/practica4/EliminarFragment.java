@@ -37,6 +37,13 @@ public class EliminarFragment extends Fragment {
         eNombre= view.findViewById(R.id.eEliminar);
         bEliminar =view.findViewById(R.id.bEliminar);
 
+        peluchesSQLiteHelper= new PeluchesSQLiteHelper(getActivity(),
+                "peluchesBD",
+                null,
+                1);
+
+        sqLiteDatabase= peluchesSQLiteHelper.getWritableDatabase();
+
         bEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
